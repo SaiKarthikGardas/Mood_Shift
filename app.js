@@ -67,13 +67,13 @@ const MOOD_DATA = {
       { title: "Tu Jaane Na", videoId: "P8PWN1OmZOA", sub: "Ajab Prem Ki Ghazab Kahani" }
     ],
     telugu: [
-      { title: "Nannu Dochukunduvate", videoId: "aotMkXvjXtc", sub: "Jersey" },
+      { title: "Nannu Dochukunduvate", videoId: "Z5uU0bby_t0", sub: "Jersey" },
       { title: "Manasa", videoId: "T9zXvT7_z9Q", sub: "RX100" },
-      { title: "Neevalle Neevalle", videoId: "fxajBSuxwRY", sub: "Uppena" },
+      { title: "Neevalle Neevalle", videoId: "U3gUfEWe-8E", sub: "Uppena" },
       { title: "Yenno Yenno", videoId: "X9zXWf33b1U", sub: "Ninnu Kori" },
       { title: "Nee Kalyanam", videoId: "Oat-xI2S1m8", sub: "Uyyala Jampala" },
       { title: "Nachave Thalliki", videoId: "bV8-N7u2iYI", sub: "Padi Padi Leche Manasu" },
-      { title: "Choosi Choodangane", videoId: "OCg6BWlAXSw", sub: "Chalo" }
+      { title: "Choosi Choodangane", videoId: "7OclO-7w8qI", sub: "Chalo" }
     ]
   },
   angry: {
@@ -88,10 +88,10 @@ const MOOD_DATA = {
     ],
     hindi: [
       { title: "Channa Mereya", videoId: "bzSTpdcs-EI", sub: "Ae Dil Hai Mushkil" },
-      { title: "Tera Ban Jaunga", videoId: "mX3zTfWvEps", sub: "Kabier Singh" },
+      { title: "Tera Ban Jaunga", videoId: "mX3zTfWvEps", sub: "Kabir Singh" },
       { title: "Phir Le Aya Dil", videoId: "4_6U6G8V4hI", sub: "Barfi" },
       { title: "Tum Se Hi", videoId: "cbMOn8g0vSg", sub: "Jab We Met" },
-      { title: "Muskurane", videoId: "l8_MyUGq7pgs", sub: "CityLights" },
+      { title: "Muskurane", videoId: "30_hL589Ais", sub: "CityLights" },
       { title: "Bolna", videoId: "AJ-fW67Vwos", sub: "Kapoor & Sons" },
       { title: "Raabta", videoId: "zLTzW_By87w", sub: "Agent Vinod" }
     ],
@@ -101,7 +101,7 @@ const MOOD_DATA = {
       { title: "Cheliya", videoId: "9S_gR6MAs90", sub: "Major" },
       { title: "Priyathama", videoId: "uO0h_L40O6Y", sub: "Major" },
       { title: "Alai Sepudo", videoId: "V_mDizB7v1I", sub: "Aravindha Sametha" },
-      { title: "Nee Kannu Neeli Samudram", videoId: "J5b6NRiMO6Q", sub: "Uppena" },
+      { title: "Nee Kannu Neeli Samudram", videoId: "u8bK88gRWhE", sub: "Uppena" },
       { title: "Kanureppa Vaalu", videoId: "fR_X86B1oH8", sub: "Aakasa Veedhullo" }
     ]
   },
@@ -118,15 +118,15 @@ const MOOD_DATA = {
     hindi: [
       { title: "Kabira", videoId: "jHNNMj5bNQw", sub: "Yeh Jawaani Hai Deewani" },
       { title: "Luka Chuppi", videoId: "gqZ_b6R0aCg", sub: "Rang De Basanti" },
-      { title: "Pee Loon", videoId: "bnqLzCsffwY", sub: "Once Upon A Time In Mumbaai" },
-      { title: "Enna Sona", videoId: "n4QK52sO720", sub: "OK Jaanu" },
-      { title: "Hasi Ban Gaye", videoId: "BddP6PYo2gs", sub: "Hamari Adhuri Kahani" },
+      { title: "Pee Loon", videoId: "ly7_6cR0kGw", sub: "Once Upon A Time In Mumbaai" },
+      { title: "Enna Sona", videoId: "5m6vK45R8gw", sub: "OK Jaanu" },
+      { title: "Hasi Ban Gaye", videoId: "KqJ9K8fA9yw", sub: "Hamari Adhuri Kahani" },
       { title: "Tum Hi Ho", videoId: "Umqb9KENgmk", sub: "Aashiqui 2" },
       { title: "Phir Se", videoId: "fP6MNznzVcQ", sub: "Rocket Singh" }
     ],
     telugu: [
       { title: "Vennello Vennello", videoId: "E16M_v8b-8g", sub: "Nuvvu Nenu" },
-      { title: "Ninu Kori (Acoustic Vibe)", videoId: "X9zXWf33b1U", sub: "Ninnu Kori" },
+      { title: "Ninu Kori (Acoustic Vibe)", videoId: "F1R9B6YfSjg", sub: "Ninnu Kori" },
       { title: "Emitemitemito", videoId: "eYc_N6ZfUj4", sub: "RX100" },
       { title: "Manasu Palike", videoId: "6m7F3u_w9B0", sub: "Nuvvu Nenu Prema" },
       { title: "Nee Kosam", videoId: "9oX_1O8w9hE", sub: "90ML" },
@@ -145,8 +145,8 @@ const MOOD_DATA = {
       { title: "Good Time", videoId: "09R8_2nJtjg", sub: "Owl City & Carly Rae Jepsen" }
     ],
     hindi: [
-      { title: "Malhari", videoId: "BddP6PYo2gs", sub: "Bajirao Mastani" },
-      { title: "Aankh Marey", videoId: "fP6MNznzVcQ", sub: "Simmba" },
+      { title: "Malhari", videoId: "vK7l5m0-7bM", sub: "Bajirao Mastani" },
+      { title: "Aankh Marey", videoId: "48uK6L59Ags", sub: "Simmba" },
       { title: "Kar Gayi Chull", videoId: "l_MyUGq7pgs", sub: "Kapoor & Sons" },
       { title: "London Thumakda", videoId: "n4QK52sO720", sub: "Queen" },
       { title: "Ghungroo", videoId: "bnqLzCsffwY", sub: "War" },
@@ -154,13 +154,13 @@ const MOOD_DATA = {
       { title: "Nachan Farrate", videoId: "9iIX4PBplAY", sub: "All Is Well" }
     ],
     telugu: [
-      { title: "Naatu Naatu", videoId: "2mDCVzruYzQ", sub: "RRR" },
-      { title: "Seeti Maar", videoId: "OCg6BWlAXSw", sub: "DJ Duvvada Jagannadham" },
-      { title: "Rangamma Mangamma", videoId: "Bg8Yb9zGYyA", sub: "Rangasthalam" },
-      { title: "Blockbuster", videoId: "OsU0CGZoV8E", sub: "Sarrainodu" },
-      { title: "Jai Balayya", videoId: "J5b6NRiMO6Q", sub: "Akhanda" },
-      { title: "Dhee Dhee", videoId: "aotMkXvjXtc", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachadayyay Saami", videoId: "fxajBSuxwRY", sub: "Bharat Ane Nenu" }
+      { title: "Naatu Naatu", videoId: "OsU0CGZoV8E", sub: "RRR" },
+      { title: "Seeti Maar", videoId: "w_vA9jF8g_M", sub: "DJ Duvvada Jagannadham" },
+      { title: "Rangamma Mangamma", videoId: "K1I_p7u1V_c", sub: "Rangasthalam" },
+      { title: "Blockbuster", videoId: "h1rK8K_p9W8", sub: "Sarrainodu" },
+      { title: "Jai Balayya", videoId: "9A_9Jg7V4wE", sub: "Akhanda" },
+      { title: "Dhee Dhee", videoId: "2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
+      { title: "Vachadayyay Saami", videoId: "vA9jF6G8uK0", sub: "Bharat Ane Nenu" }
     ]
   },
   joyful: {
@@ -171,7 +171,7 @@ const MOOD_DATA = {
       { title: "Physical", videoId: "9HDEHj2yzew", sub: "Dua Lipa" },
       { title: "Shut Up and Dance", videoId: "6JCLY0R_b_w", sub: "WALK THE MOON" },
       { title: "Good Time", videoId: "H7HmzwI67ec", sub: "Owl City" },
-      { title: "Uptown Funk", videoId: "OPf0YbXqDm0", sub: "Bruno Mars" }
+      { title: "Uptown Funk", videoId: "gCYcHz2k5hs", sub: "Bruno Mars" }
     ],
     hindi: [
       { title: "Malhari", videoId: "z_8ZqT8yYmE", sub: "Bajirao Mastani" },
@@ -183,13 +183,13 @@ const MOOD_DATA = {
       { title: "Nachan Farrate", videoId: "vK8F9Yc7I6g", sub: "All Is Well" }
     ],
     telugu: [
-      { title: "Naatu Naatu", videoId: "OsU0CGZoV8E", sub: "RRR" },
-      { title: "Seeti Maar", videoId: "w_vA9jF8g_M", sub: "DJ" },
-      { title: "Rangamma Mangamma", videoId: "K1I_p7u1V_c", sub: "Rangasthalam" },
-      { title: "Blockbuster", videoId: "h1rK8K_p9W8", sub: "Sarrainodu" },
-      { title: "Jai Balayya", videoId: "9A_9Jg7V4wE", sub: "Veera Simha Reddy" },
-      { title: "Dhee Dhee", videoId: "2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachadayyay Saami", videoId: "vA9jF6G8uK0", sub: "Bharat Ane Nenu" }
+      { title: "Naatu Naatu", videoId: "Na213U_8ZWw", sub: "RRR" },
+      { title: "Seeti Maar", videoId: "3X8_M7gPZf0", sub: "DJ" },
+      { title: "Rangamma Mangamma", videoId: "6Z4f67g9wYw", sub: "Rangasthalam" },
+      { title: "Blockbuster", videoId: "4_8Z7vK_uK8", sub: "Sarrainodu" },
+      { title: "Jai Balayya", videoId: "z_9M6wG8Azo", sub: "Veera Simha Reddy" },
+      { title: "Dhee Dhee", videoId: "8_8G6jW8pXw", sub: "Ala Vaikunthapurramuloo" },
+      { title: "Vachadayyay Saami", videoId: "w_8M9xK7l8o", sub: "Bharat Ane Nenu" }
     ]
   }
 };
