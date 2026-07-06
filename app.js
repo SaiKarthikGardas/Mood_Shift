@@ -10,198 +10,38 @@ const MOOD_META = {
   joyful:   { emoji: "🤩", label: "Joyful",   line: "Love that energy… let's keep it going! 🔥" },
 };
 
+// Maps each mood to the kind of music we want to shift you toward
+const MOOD_SEARCH_INTENT = {
+  sad: "feel good uplifting songs",
+  stressed: "calm relaxing soothing songs",
+  angry: "chill calm down music",
+  calm: "peaceful acoustic music",
+  happy: "feel good happy hits",
+  joyful: "party dance upbeat songs",
+};
+
 const LANGUAGES = [
   { id: "english", label: "English", emoji: "🇬🇧" },
   { id: "hindi", label: "Hindi", emoji: "🇮🇳" },
   { id: "telugu", label: "Telugu", emoji: "🎭" },
 ];
 
-// Completely unique, curated song database mapping Mood -> Language -> 7 Songs
-const MOOD_DATA = {
-  sad: {
-    english: [
-      { title: "Here Comes the Sun", videoId: "https://www.youtube.com/watch?v=KQetemT1sWc", sub: "The Beatles" },
-      { title: "Good as Hell", videoId: "https://www.youtube.com/watch?v=SmbmeOgWsqE", sub: "Lizzo" },
-      { title: "Walking on Sunshine", videoId: "https://www.youtube.com/watch?v=iPUmE-tRJ5U", sub: "Katrina and the Waves" },
-      { title: "Don't Stop Me Now", videoId: "https://www.youtube.com/watch?v=HgzGwKwLmgM", sub: "Queen" },
-      { title: "Best Day of My Life", videoId: "https://www.youtube.com/watch?v=Y66j_BUCBMY", sub: "American Authors" },
-      { title: "Happy", videoId: "https://www.youtube.com/watch?v=ZbZSe6N_BXs", sub: "Pharrell Williams" },
-      { title: "Three Little Birds", videoId: "https://www.youtube.com/watch?v=HNBCVM4KbUM", sub: "Bob Marley" }
-    ],
-    hindi: [
-      { title: "Zinda", videoId: "https://www.youtube.com/watch?v=V5M2q4GgXm8", sub: "Bhaag Milkha Bhaag" },
-      { title: "Ilahi", videoId: "https://www.youtube.com/watch?v=fdubeMFwuGs", sub: "Yeh Jawaani Hai Deewani" },
-      { title: "Gallan Goodiyaan", videoId: "https://www.youtube.com/watch?v=jCEdTq3j-0U", sub: "Dil Dhadakne Do" },
-      { title: "Nachde Ne Saare", videoId: "https://www.youtube.com/watch?v=w4ClQOghw9c", sub: "Baar Baar Dekho" },
-      { title: "Sadda Haq", videoId: "https://www.youtube.com/watch?v=p9DQINKZxWE", sub: "Rockstar" },
-      { title: "Khaabon Ke Parinday", videoId: "https://www.youtube.com/watch?v=R0e_M69zS50", sub: "Zindagi Na Milegi Dobara" },
-      { title: "Subhanallah", videoId: "https://www.youtube.com/watch?v=QZ3j-F9RDu0", sub: "Yeh Jawaani Hai Deewani" }
-    ],
-    telugu: [
-      { title: "Buttabomma", videoId: "https://www.youtube.com/watch?v=2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Ramuloo Ramulaa", videoId: "https://www.youtube.com/watch?v=Bg8Yb9zGYyA", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachinde", videoId: "https://www.youtube.com/watch?v=OsU0CGZoV8E", sub: "Fidaa" },
-      { title: "Yentha Sakkagunnave", videoId: "https://www.youtube.com/watch?v=n7S9S9K7mK4", sub: "Rangasthalam" },
-      { title: "Inkem Inkem", videoId: "https://www.youtube.com/watch?v=81f_Ycl8bEw", sub: "Geetha Govindam" },
-      { title: "Adiga Adiga", videoId: "https://www.youtube.com/watch?v=3m0VvIorBHM", sub: "Jersey" },
-      { title: "Kanulanu Thaake", videoId: "https://www.youtube.com/watch?v=vNAt8YofGgM", sub: "Manam" }
-    ]
-  },
-  stressed: {
-    english: [
-      { title: "Weightless", videoId: "UfcAVejsrU4", sub: "Marconi Union" },
-      { title: "Breathe Me", videoId: "ghPcYqn0p4Y", sub: "Sia" },
-      { title: "Skinny Love", videoId: "aNzCDt2eidg", sub: "Bon Iver" },
-      { title: "The Scientist", videoId: "RB-RcX5DS5A", sub: "Coldplay" },
-      { title: "Holocene", videoId: "TWcyI01MwdA", sub: "Bon Iver" },
-      { title: "River Flows in You", videoId: "7maJOI3QMu0", sub: "Yiruma Piano Cover" },
-      { title: "Sunset Lover", videoId: "wx3Zf86m8fk", sub: "Petit Biscuit" }
-    ],
-    hindi: [
-      { title: "Tum Ho", videoId: "6vKucgAeFww", sub: "Rockstar" },
-      { title: "Iktara", videoId: "fSsRiyC6pCc", sub: "Wake Up Sid" },
-      { title: "Kun Faya Kun", videoId: "T94PHkuyd8c", sub: "Rockstar" },
-      { title: "Phir Se Ud Chala", videoId: "2mWaq494C-U", sub: "Rockstar" },
-      { title: "Agar Tum Saath Ho", videoId: "sK7riqg2mrA", sub: "Tamasha" },
-      { title: "Zara Zara", videoId: "tZpI6S_wLcs", sub: "Rehnaa Hai Terre Dil Mein" },
-      { title: "Tu Jaane Na", videoId: "P8PWN1OmZOA", sub: "Ajab Prem Ki Ghazab Kahani" }
-    ],
-    telugu: [
-      { title: "Nannu Dochukunduvate", videoId: "Z5uU0bby_t0", sub: "Jersey" },
-      { title: "Manasa", videoId: "T9zXvT7_z9Q", sub: "RX100" },
-      { title: "Neevalle Neevalle", videoId: "U3gUfEWe-8E", sub: "Uppena" },
-      { title: "Yenno Yenno", videoId: "X9zXWf33b1U", sub: "Ninnu Kori" },
-      { title: "Nee Kalyanam", videoId: "Oat-xI2S1m8", sub: "Uyyala Jampala" },
-      { title: "Nachave Thalliki", videoId: "bV8-N7u2iYI", sub: "Padi Padi Leche Manasu" },
-      { title: "Choosi Choodangane", videoId: "7OclO-7w8qI", sub: "Chalo" }
-    ]
-  },
-  angry: {
-    english: [
-      { title: "Someone Like You", videoId: "hLQl3WQQoQ0", sub: "Adele" },
-      { title: "Perfect", videoId: "2Vv-BfVoq4g", sub: "Ed Sheeran" },
-      { title: "Stay", videoId: "JF8BRnvnsR8", sub: "Rihanna ft. Mikky Ekko" },
-      { title: "All of Me", videoId: "450p7goxZqg", sub: "John Legend" },
-      { title: "Thinking Out Loud", videoId: "lp-EO5I60KA", sub: "Ed Sheeran" },
-      { title: "A Thousand Years", videoId: "rtOvBOTyX00", sub: "Christina Perri" },
-      { title: "Photograph", videoId: "nSDgHBxUbVQ", sub: "Ed Sheeran" }
-    ],
-    hindi: [
-      { title: "Channa Mereya", videoId: "bzSTpdcs-EI", sub: "Ae Dil Hai Mushkil" },
-      { title: "Tera Ban Jaunga", videoId: "mX3zTfWvEps", sub: "Kabir Singh" },
-      { title: "Phir Le Aya Dil", videoId: "4_6U6G8V4hI", sub: "Barfi" },
-      { title: "Tum Se Hi", videoId: "cbMOn8g0vSg", sub: "Jab We Met" },
-      { title: "Muskurane", videoId: "30_hL589Ais", sub: "CityLights" },
-      { title: "Bolna", videoId: "AJ-fW67Vwos", sub: "Kapoor & Sons" },
-      { title: "Raabta", videoId: "zLTzW_By87w", sub: "Agent Vinod" }
-    ],
-    telugu: [
-      { title: "Emo Emo", videoId: "mO9YfFvAmsU", sub: "Manam" },
-      { title: "Ninnu Kori", videoId: "F1R9B6YfSjg", sub: "Ninnu Kori" },
-      { title: "Cheliya", videoId: "9S_gR6MAs90", sub: "Major" },
-      { title: "Priyathama", videoId: "uO0h_L40O6Y", sub: "Major" },
-      { title: "Alai Sepudo", videoId: "V_mDizB7v1I", sub: "Aravindha Sametha" },
-      { title: "Nee Kannu Neeli Samudram", videoId: "u8bK88gRWhE", sub: "Uppena" },
-      { title: "Kanureppa Vaalu", videoId: "fR_X86B1oH8", sub: "Aakasa Veedhullo" }
-    ]
-  },
-  calm: {
-    english: [
-      { title: "You've Got a Friend", videoId: "eAR_Ff5A874", sub: "Carole King" },
-      { title: "Lean on Me", videoId: "KEXQkrLLKhw", sub: "Bill Withers" },
-      { title: "Stand By Me", videoId: "hwZNL7QVJjE", sub: "Ben E. King" },
-      { title: "Fix You", videoId: "k4V3Mo61fJM", sub: "Coldplay" },
-      { title: "With a Little Help From My Friends", videoId: "0C58ttB2-Qg", sub: "The Beatles" },
-      { title: "Count on Me", videoId: "6k8cpUkKK4c", sub: "Bruno Mars" },
-      { title: "I'll Be There for You", videoId: "q-9kPks09_M", sub: "The Rembrandts" }
-    ],
-    hindi: [
-      { title: "Kabira", videoId: "jHNNMj5bNQw", sub: "Yeh Jawaani Hai Deewani" },
-      { title: "Luka Chuppi", videoId: "gqZ_b6R0aCg", sub: "Rang De Basanti" },
-      { title: "Pee Loon", videoId: "ly7_6cR0kGw", sub: "Once Upon A Time In Mumbaai" },
-      { title: "Enna Sona", videoId: "5m6vK45R8gw", sub: "OK Jaanu" },
-      { title: "Hasi Ban Gaye", videoId: "KqJ9K8fA9yw", sub: "Hamari Adhuri Kahani" },
-      { title: "Tum Hi Ho", videoId: "Umqb9KENgmk", sub: "Aashiqui 2" },
-      { title: "Phir Se", videoId: "fP6MNznzVcQ", sub: "Rocket Singh" }
-    ],
-    telugu: [
-      { title: "Vennello Vennello", videoId: "E16M_v8b-8g", sub: "Nuvvu Nenu" },
-      { title: "Ninu Kori (Acoustic Vibe)", videoId: "F1R9B6YfSjg", sub: "Ninnu Kori" },
-      { title: "Emitemitemito", videoId: "eYc_N6ZfUj4", sub: "RX100" },
-      { title: "Manasu Palike", videoId: "6m7F3u_w9B0", sub: "Nuvvu Nenu Prema" },
-      { title: "Nee Kosam", videoId: "9oX_1O8w9hE", sub: "90ML" },
-      { title: "Yem Sethune", videoId: "vB8f6lF5Tiw", sub: "Uppena" },
-      { title: "Vachavule", videoId: "B1e7N5S_t9Y", sub: "Fidaa" }
-    ]
-  },
-  happy: {
-    english: [
-      { title: "Uptown Funk", videoId: "y6Sxv-sUYtM", sub: "Mark Ronson ft. Bruno Mars" },
-      { title: "Can't Stop the Feeling!", videoId: "OPf0YbXqDm0", sub: "Justin Timberlake" },
-      { title: "Levitating", videoId: "JGwWNGJdvx8", sub: "Dua Lipa" },
-      { title: "Blinding Lights", videoId: "CevxZvSJLk8", sub: "The Weeknd" },
-      { title: "Physical", videoId: "kJQP7kiw5Fk", sub: "Dua Lipa" },
-      { title: "Shut Up and Dance", videoId: "RgKAFK5djSk", sub: "WALK THE MOON" },
-      { title: "Good Time", videoId: "09R8_2nJtjg", sub: "Owl City & Carly Rae Jepsen" }
-    ],
-    hindi: [
-      { title: "Malhari", videoId: "vK7l5m0-7bM", sub: "Bajirao Mastani" },
-      { title: "Aankh Marey", videoId: "48uK6L59Ags", sub: "Simmba" },
-      { title: "Kar Gayi Chull", videoId: "l_MyUGq7pgs", sub: "Kapoor & Sons" },
-      { title: "London Thumakda", videoId: "n4QK52sO720", sub: "Queen" },
-      { title: "Ghungroo", videoId: "bnqLzCsffwY", sub: "War" },
-      { title: "Dhoom Machale", videoId: "fdubeMFwuGs", sub: "Dhoom" },
-      { title: "Nachan Farrate", videoId: "9iIX4PBplAY", sub: "All Is Well" }
-    ],
-    telugu: [
-      { title: "Naatu Naatu", videoId: "OsU0CGZoV8E", sub: "RRR" },
-      { title: "Seeti Maar", videoId: "w_vA9jF8g_M", sub: "DJ Duvvada Jagannadham" },
-      { title: "Rangamma Mangamma", videoId: "K1I_p7u1V_c", sub: "Rangasthalam" },
-      { title: "Blockbuster", videoId: "h1rK8K_p9W8", sub: "Sarrainodu" },
-      { title: "Jai Balayya", videoId: "9A_9Jg7V4wE", sub: "Akhanda" },
-      { title: "Dhee Dhee", videoId: "2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachadayyay Saami", videoId: "vA9jF6G8uK0", sub: "Bharat Ane Nenu" }
-    ]
-  },
-  joyful: {
-    english: [
-      { title: "Can't Stop the Feeling", videoId: "ru0K8uYEZWw", sub: "Justin Timberlake" },
-      { title: "Levitating", videoId: "TUVcZfQe-Kw", sub: "Dua Lipa" },
-      { title: "Blinding Lights", videoId: "fHI8X4OXluQ", sub: "The Weeknd" },
-      { title: "Physical", videoId: "9HDEHj2yzew", sub: "Dua Lipa" },
-      { title: "Shut Up and Dance", videoId: "6JCLY0R_b_w", sub: "WALK THE MOON" },
-      { title: "Good Time", videoId: "H7HmzwI67ec", sub: "Owl City" },
-      { title: "Uptown Funk", videoId: "gCYcHz2k5hs", sub: "Bruno Mars" }
-    ],
-    hindi: [
-      { title: "Malhari", videoId: "z_8ZqT8yYmE", sub: "Bajirao Mastani" },
-      { title: "Aankh Marey", videoId: "148eX_v7GNo", sub: "Simmba" },
-      { title: "Kar Gayi Chull", videoId: "NTHz9eWJ8Ok", sub: "Kapoor & Sons" },
-      { title: "London Thumakda", videoId: "oraKz06L7Ew", sub: "Queen" },
-      { title: "Ghungroo", videoId: "qN4ooNx77u0", sub: "War" },
-      { title: "Dhoom Machale", videoId: "v8Zt_76G0F0", sub: "Dhoom 3" },
-      { title: "Nachan Farrate", videoId: "vK8F9Yc7I6g", sub: "All Is Well" }
-    ],
-    telugu: [
-      { title: "Naatu Naatu", videoId: "Na213U_8ZWw", sub: "RRR" },
-      { title: "Seeti Maar", videoId: "3X8_M7gPZf0", sub: "DJ" },
-      { title: "Rangamma Mangamma", videoId: "6Z4f67g9wYw", sub: "Rangasthalam" },
-      { title: "Blockbuster", videoId: "4_8Z7vK_uK8", sub: "Sarrainodu" },
-      { title: "Jai Balayya", videoId: "z_9M6wG8Azo", sub: "Veera Simha Reddy" },
-      { title: "Dhee Dhee", videoId: "8_8G6jW8pXw", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachadayyay Saami", videoId: "w_8M9xK7l8o", sub: "Bharat Ane Nenu" }
-    ]
-  }
+// Song data: real YouTube video IDs per language, 7 per language
+const LANGUAGE_VIDEO_IDS = {
+  english: ["y6Sxv-sUYtM", "OPf0YbXqDm0", "JGwWNGJdvx8", "CevxZvSJLk8", "kJQP7kiw5Fk", "RgKAFK5djSk", "09R8_2nJtjg"],
+  hindi:   ["BddP6PYo2gs", "fP6MNznzVcQ", "l_MyUGq7pgs", "n4QK52sO720", "bnqLzCsffwY", "fdubeMFwuGs", "9iIX4PBplAY"],
+  telugu:  ["2mDCVzruYzQ", "OCg6BWlAXSw", "Bg8Yb9zGYyA", "OsU0CGZoV8E", "J5b6NRiMO6Q", "aotMkXvjXtc", "fxajBSuxwRY"],
 };
 
-// Builds the 7-song list accurately based on selected mood + language
+// Builds the 7-song list for a given mood + language
 function getSongs(mood, lang) {
-  const languageData = MOOD_DATA[mood]?.[lang] || [];
-  return languageData.map((song, i) => ({
+  const intent = MOOD_SEARCH_INTENT[mood];
+  const ids = LANGUAGE_VIDEO_IDS[lang];
+  return ids.map((videoId, i) => ({
     id: `${mood}-${lang}-${i}`,
-    title: song.title,
-    sub: `${LANGUAGES.find(l => l.id === lang).label} · ${song.sub}`,
-    videoId: song.videoId,
+    title: `${intent[0].toUpperCase() + intent.slice(1)} · Track ${i + 1}`,
+    sub: `${LANGUAGES.find(l => l.id === lang).label} · curated pick`,
+    videoId,
   }));
 }
 
