@@ -1,4 +1,4 @@
-# Mood Shift 🎶
+# Mood Shift 🎶🔥
 
 ### 🚀 [**Try it live → mood-shift-six.vercel.app**](https://mood-shift-six.vercel.app)
 
