@@ -20,31 +20,31 @@ const LANGUAGES = [
 const MOOD_DATA = {
   sad: {
     english: [
-      { title: "Here Comes the Sun", videoId: "KQetemT1sWc", sub: "The Beatles" },
-      { title: "Good as Hell", videoId: "SmbmeOgWsqE", sub: "Lizzo" },
-      { title: "Walking on Sunshine", videoId: "iPUmE-tRJ5U", sub: "Katrina and the Waves" },
-      { title: "Don't Stop Me Now", videoId: "HgzGwKwLmgM", sub: "Queen" },
-      { title: "Best Day of My Life", videoId: "Y66j_BUCBMY", sub: "American Authors" },
-      { title: "Happy", videoId: "ZbZSe6N_BXs", sub: "Pharrell Williams" },
-      { title: "Three Little Birds", videoId: "HNBCVM4KbUM", sub: "Bob Marley" }
+      { title: "Here Comes the Sun", videoId: "https://www.youtube.com/watch?v=KQetemT1sWc", sub: "The Beatles" },
+      { title: "Good as Hell", videoId: "https://www.youtube.com/watch?v=SmbmeOgWsqE", sub: "Lizzo" },
+      { title: "Walking on Sunshine", videoId: "https://www.youtube.com/watch?v=iPUmE-tRJ5U", sub: "Katrina and the Waves" },
+      { title: "Don't Stop Me Now", videoId: "https://www.youtube.com/watch?v=HgzGwKwLmgM", sub: "Queen" },
+      { title: "Best Day of My Life", videoId: "https://www.youtube.com/watch?v=Y66j_BUCBMY", sub: "American Authors" },
+      { title: "Happy", videoId: "https://www.youtube.com/watch?v=ZbZSe6N_BXs", sub: "Pharrell Williams" },
+      { title: "Three Little Birds", videoId: "https://www.youtube.com/watch?v=HNBCVM4KbUM", sub: "Bob Marley" }
     ],
     hindi: [
-      { title: "Zinda", videoId: "V5M2q4GgXm8", sub: "Bhaag Milkha Bhaag" },
-      { title: "Ilahi", videoId: "fdubeMFwuGs", sub: "Yeh Jawaani Hai Deewani" },
-      { title: "Gallan Goodiyaan", videoId: "jCEdTq3j-0U", sub: "Dil Dhadakne Do" },
-      { title: "Nachde Ne Saare", videoId: "w4ClQOghw9c", sub: "Baar Baar Dekho" },
-      { title: "Sadda Haq", videoId: "p9DQINKZxWE", sub: "Rockstar" },
-      { title: "Khaabon Ke Parinday", videoId: "R0e_M69zS50", sub: "Zindagi Na Milegi Dobara" },
-      { title: "Subhanallah", videoId: "QZ3j-F9RDu0", sub: "Yeh Jawaani Hai Deewani" }
+      { title: "Zinda", videoId: "https://www.youtube.com/watch?v=V5M2q4GgXm8", sub: "Bhaag Milkha Bhaag" },
+      { title: "Ilahi", videoId: "https://www.youtube.com/watch?v=fdubeMFwuGs", sub: "Yeh Jawaani Hai Deewani" },
+      { title: "Gallan Goodiyaan", videoId: "https://www.youtube.com/watch?v=jCEdTq3j-0U", sub: "Dil Dhadakne Do" },
+      { title: "Nachde Ne Saare", videoId: "https://www.youtube.com/watch?v=w4ClQOghw9c", sub: "Baar Baar Dekho" },
+      { title: "Sadda Haq", videoId: "https://www.youtube.com/watch?v=p9DQINKZxWE", sub: "Rockstar" },
+      { title: "Khaabon Ke Parinday", videoId: "https://www.youtube.com/watch?v=R0e_M69zS50", sub: "Zindagi Na Milegi Dobara" },
+      { title: "Subhanallah", videoId: "https://www.youtube.com/watch?v=QZ3j-F9RDu0", sub: "Yeh Jawaani Hai Deewani" }
     ],
     telugu: [
-      { title: "Buttabomma", videoId: "2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Ramuloo Ramulaa", videoId: "Bg8Yb9zGYyA", sub: "Ala Vaikunthapurramuloo" },
-      { title: "Vachinde", videoId: "OsU0CGZoV8E", sub: "Fidaa" },
-      { title: "Yentha Sakkagunnave", videoId: "n7S9S9K7mK4", sub: "Rangasthalam" },
-      { title: "Inkem Inkem", videoId: "81f_Ycl8bEw", sub: "Geetha Govindam" },
-      { title: "Adiga Adiga", videoId: "3m0VvIorBHM", sub: "Jersey" },
-      { title: "Kanulanu Thaake", videoId: "vNAt8YofGgM", sub: "Manam" }
+      { title: "Buttabomma", videoId: "https://www.youtube.com/watch?v=2mDCVzruYzQ", sub: "Ala Vaikunthapurramuloo" },
+      { title: "Ramuloo Ramulaa", videoId: "https://www.youtube.com/watch?v=Bg8Yb9zGYyA", sub: "Ala Vaikunthapurramuloo" },
+      { title: "Vachinde", videoId: "https://www.youtube.com/watch?v=OsU0CGZoV8E", sub: "Fidaa" },
+      { title: "Yentha Sakkagunnave", videoId: "https://www.youtube.com/watch?v=n7S9S9K7mK4", sub: "Rangasthalam" },
+      { title: "Inkem Inkem", videoId: "https://www.youtube.com/watch?v=81f_Ycl8bEw", sub: "Geetha Govindam" },
+      { title: "Adiga Adiga", videoId: "https://www.youtube.com/watch?v=3m0VvIorBHM", sub: "Jersey" },
+      { title: "Kanulanu Thaake", videoId: "https://www.youtube.com/watch?v=vNAt8YofGgM", sub: "Manam" }
     ]
   },
   stressed: {
